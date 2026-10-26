@@ -33,7 +33,7 @@ app.post('/upload', upload.single("pdf"), async (req, res) => {
             model: "gemini-3.1-flash-lite",
             contents: `Explain this PDF in simple text:\n${text}`
         });
-
+        const rasuhan = req.data;
         res.json({
             totalChunks: chunks.length,
             chunks,
